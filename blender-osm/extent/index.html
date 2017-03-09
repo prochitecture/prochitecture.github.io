@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
+    
+    <link rel="stylesheet" href="../../assets/leaflet/leaflet.locationfilter.css">
+    <link rel="stylesheet" href="extent.css">
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/v1.6.0/dist/clipboard.min.js"></script>
+    <script src="../../assets/leaflet/leaflet.locationfilter.js"></script>
+    <script src="extent.js"></script>
+  </head>
+
+  <body>
+  
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a>Menu item 1</a>
+            </li>
+            <li>
+              <a>Menu item 2</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="container">
+      <div id="sidebar">
+        <div class="sidebar-wrapper">
+          <button type="button" id="rectangle_button" title="Show selection rectangle" class="btn btn-primary btn-sm">Rectangle</button>
+          <button type="button" id="copy_button" title="Copy the coordinates of your extent to the clipboard" class="btn btn-primary btn-sm">Copy</button>
+          <div id="coords" class="panel panel-primary">
+            <div class="panel-heading">Extent coordinates</div>
+            <div class="panel-body">
+    	        <div class="row">
+    	          <div class="col-xs-3"></div>
+    	          <div class="col-xs-6">
+    	            <input id="lat_max" class="form-control" type="text" value="51.2345"></input>
+    	          </div>
+    	          <div class="col-xs-3"></div>
+    	        </div>
+    	        <div class="row" style="margin-top: 5px; margin-bottom: 5px;">
+    	          <div class="col-xs-6">
+    	            <input id="lon_min" class="form-control" type="text" value="51.2345"></input>
+    	          </div>
+    	          <div class="col-xs-6">
+    	            <input id="lon_max" class="form-control" type="text" value="51.2345"></input>
+    	          </div>
+    	        </div>
+    	        <div class="row">
+    	          <div class="col-xs-3"></div>
+    	          <div class="col-xs-6">
+    	            <input id="lat_min" class="form-control" type="text" value="51.2345"></input>
+    	          </div>
+    	          <div class="col-xs-3"></div>
+    	        </div>
+	        </div>
+          </div>
+        </div>
+      </div>
+      <div id="map"></div>
+    </div>
+  
+  </body>
+</html>

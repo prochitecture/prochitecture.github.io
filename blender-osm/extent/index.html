@@ -44,8 +44,30 @@
     <div id="container">
       <div id="sidebar">
         <div class="sidebar-wrapper">
-          <button type="button" id="rectangle_button" title="Show selection rectangle" class="btn btn-primary btn-sm">Rectangle</button>
-          <button type="button" id="copy_button" title="Copy the coordinates of your extent to the clipboard" class="btn btn-primary btn-sm">Copy</button>
+          <div id="coords" class="panel panel-primary">
+            <div class="panel-heading">Instructions</div>
+            <div class="panel-body">
+              <p>
+                <span class="label label-danger">1</span> Zoom the map to your area of interest
+              </p>
+              <p>
+                <span class="label label-danger">2</span> Press <mark>Show selection rectangle</mark>
+              </p>
+              <p>
+                <button type="button" id="rectangle_button" title="Show selection rectangle" class="btn btn-primary btn-sm">
+                  Show selection rectangle
+                </button>
+              </p>
+              <p>
+                <span class="label label-danger">3</span> Press <mark>Copy</mark> to copy the string with coordinates to the clipboard
+              </p>
+              <p>
+                <button type="button" id="copy_button" title="Copy the coordinates of your extent to the clipboard" class="btn btn-primary btn-sm">
+                  Copy
+                </button>
+              </p>
+            </div>
+          </div>
           <div id="coords" class="panel panel-primary">
             <div class="panel-heading">Extent coordinates</div>
             <div class="panel-body">

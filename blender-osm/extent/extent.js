@@ -57,7 +57,7 @@ function main() {
 	$("#rectangle_button").on("click", function(event) {
 		locationFilter.setBounds(map.getBounds().pad(-0.2));
 		locationFilter.enable();
-		validateControls();
+		update();
 	});
 	
 	var locationFilter = new L.LocationFilter({

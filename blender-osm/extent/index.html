@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>blender-osm: choose map extent</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -86,11 +86,11 @@
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
     
       ga('create', 'UA-88196346-2', 'auto');
-      var blender_version='2.78',
-          addon='blender-osm',
-          addon_version='2.2.0'
-      ;
-      ga('set', {'dimension1':blender_version, 'dimension2':addon, 'dimension3':addon_version});
+      ga('set', {
+          'dimension1': urlParameters['blender_version'],
+          'dimension2': urlParameters['addon'],
+          'dimension3': urlParameters['addon_version']
+      });
       ga('send', 'pageview');
     </script>
   </body>

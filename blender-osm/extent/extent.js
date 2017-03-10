@@ -1,4 +1,28 @@
-jQuery(document).ready(main)
+jQuery(document).ready(main);
+
+var urlParameters = 
+(function (params, defaultValue) {
+	var match,
+		pl     = /\+/g,  // Regex for replacing addition symbol with a space
+		search = /([^&=]+)=?([^&]*)/g,
+		decode = function (s){
+			return decodeURIComponent(s.replace(pl, " "));
+		},
+		query  = window.location.search.substring(1),
+		urlParameters = {}
+	;
+	
+	while (match = search.exec(query))
+		urlParameters[decode(match[1])] = decode(match[2]);
+	
+	for(var i=0, n=params.length; i<n; i++){
+		if (!(params[i] in urlParameters)) {
+			urlParameters[params[i]] = defaultValue;
+		}
+	}
+	
+	return urlParameters;
+})(["blender_version", "addon", "addon_version"], "unknown");
 
 function main() {
 	

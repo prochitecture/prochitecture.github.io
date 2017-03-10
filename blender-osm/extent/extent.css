@@ -15,6 +15,9 @@ html, body, #container {
 	padding: 10px;
 	overflow-y: auto;
 }
+#coords {
+	display: none;
+}
 #map {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	height: 100%;

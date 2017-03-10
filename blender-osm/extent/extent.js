@@ -58,6 +58,7 @@ function main() {
 		locationFilter.setBounds(map.getBounds().pad(-0.2));
 		locationFilter.enable();
 		update();
+		$("#coords").css("display", "block");
 	});
 	
 	var locationFilter = new L.LocationFilter({
@@ -69,7 +70,7 @@ function main() {
 	
 	var clipboard = new Clipboard("#copy_button", {
 		text: function() {
-			return $("#lon_min").val() + "," + $("#lat_min").val() + "," + $("#lon_max").val() + "," + $("#lat_max").val();
+			return $("#lon_min").text() + "," + $("#lat_min").text() + "," + $("#lon_max").text() + "," + $("#lat_max").text();
 		}
 	});
 }

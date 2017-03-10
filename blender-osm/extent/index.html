@@ -86,6 +86,11 @@
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
     
       ga('create', 'UA-88196346-2', 'auto');
+      var blender_version='2.78',
+          addon='blender-osm',
+          addon_version='2.2.0'
+      ;
+      ga('set', {'dimension1':blender_version, 'dimension2':addon, 'dimension3':addon_version});
       ga('send', 'pageview');
     </script>
   </body>

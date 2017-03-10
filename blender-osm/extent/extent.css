@@ -12,7 +12,8 @@ html, body, #container {
 	height: 100%;
 	max-width: 100%;
 	width: 250px;
-	padding: 10px
+	padding: 10px;
+	overflow-y: auto;
 }
 #map {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);

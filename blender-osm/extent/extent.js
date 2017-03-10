@@ -39,10 +39,10 @@ function main() {
 	}
 	
 	function setBounds(bounds) {
-		$("#lon_min").val(bounds.getWest().toFixed(precision));
-		$("#lat_min").val(bounds.getSouth().toFixed(precision));
-		$("#lon_max").val(bounds.getEast().toFixed(precision));
-		$("#lat_max").val(bounds.getNorth().toFixed(precision));
+		$("#lon_min").text(bounds.getWest().toFixed(precision));
+		$("#lat_min").text(bounds.getSouth().toFixed(precision));
+		$("#lon_max").text(bounds.getEast().toFixed(precision));
+		$("#lat_max").text(bounds.getNorth().toFixed(precision));
 	}
 	
 	

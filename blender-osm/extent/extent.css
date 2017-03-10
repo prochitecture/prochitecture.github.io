@@ -24,3 +24,12 @@ html, body, #container {
 	position: relative;
 	width: 100%;
 }
+.coord {
+	margin-bottom: 5px;
+}
+.coord-lower {
+	margin-bottom: 0;
+}
+.coord-body {
+	padding: 0;
+}

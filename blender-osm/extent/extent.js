@@ -51,7 +51,7 @@ function main() {
 	
 	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 		maxZoom: 19,
-		atribution: "Map data &copy; OSM.org"
+		attribution: "Map data &copy; <a href=\"http://openstreetmap.org\" target=\"_newtab\">OpenStreetMap</a> contributors"
 	}).addTo(map);
 	
 	$("#rectangle_button").on("click", function(event) {

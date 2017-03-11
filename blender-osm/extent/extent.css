@@ -62,3 +62,6 @@ html, body, #container {
 	background-color: #365899;
 	border-color: #365899;
 }
+#drag_instructions, #alert_large, #copy_instructions, #copy_button_container {
+	display: none;
+}

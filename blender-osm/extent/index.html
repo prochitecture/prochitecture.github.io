@@ -78,13 +78,16 @@
                   Show selection rectangle
                 </button>
               </p>
-              <p>
+              <p id="drag_instructions">
                 <span class="label label-danger">3</span> Drag the rectangle to select your area of interest
               </p>
-              <p>
+              <div id="alert_large" class="alert alert-danger">
+                <strong>Your area is too large!</strong>
+              </div>
+              <p id="copy_instructions">
                 <span class="label label-danger">4</span> Press <mark>Copy</mark> to copy the string with coordinates to the clipboard:
               </p>
-              <p>
+              <p id="copy_button_container">
                 <button type="button" id="copy_button" title="Copy the coordinates of your extent to the clipboard" class="btn btn-primary btn-sm">
                   Copy
                 </button>

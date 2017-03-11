@@ -1,5 +1,6 @@
 jQuery(document).ready(main);
 
+
 var urlParameters = 
 (function (params, defaultValue) {
 	var match,
@@ -24,6 +25,7 @@ var urlParameters =
 	return urlParameters;
 })(["blender_version", "addon", "addon_version"], "unknown");
 
+
 function main() {
 	
 	var precision = 5;
@@ -34,8 +36,15 @@ function main() {
 	}
 	
 	function validateControls() {
-		//$("#export_osm_too_large").toggle(getBounds().getSize() > OSM.MAX_REQUEST_AREA);
-		//$("#export_commit").toggle(getBounds().getSize() < OSM.MAX_REQUEST_AREA);
+		var extent = L.latLngBounds(
+				L.latLng($("#lat_min").text(), $("#lon_min").text()),
+				L.latLng($("#lat_max").text(), $("#lon_max").text())
+			),
+			sizeOk = (extent._northEast.lat - extent._southWest.lat) * (extent._northEast.lng - extent._southWest.lng) < 0.25
+		;
+		$("#alert_large").toggle(!sizeOk);
+		$("#copy_instructions").toggle(sizeOk);
+		$("#copy_button_container").toggle(sizeOk);
 	}
 	
 	function setBounds(bounds) {
@@ -44,7 +53,6 @@ function main() {
 		$("#lon_max").text(bounds.getEast().toFixed(precision));
 		$("#lat_max").text(bounds.getNorth().toFixed(precision));
 	}
-	
 	
 	//$("body").css("padding-top", "50px");
 	var map = L.map("map", {}).setView([40., 0.], 2);
@@ -58,7 +66,8 @@ function main() {
 		locationFilter.setBounds(map.getBounds().pad(-0.2));
 		locationFilter.enable();
 		update();
-		$("#coords").css("display", "block");
+		$("#drag_instructions").show();
+		$("#coords").show();
 	});
 	
 	var locationFilter = new L.LocationFilter({

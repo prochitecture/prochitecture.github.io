@@ -28,7 +28,9 @@ var urlParameters =
 
 function main() {
 	
-	var precision = 5;
+	var precision = 5,
+		alertTimeout = null
+	;
 	
 	function update() {
 		setBounds(locationFilter.isEnabled() ? locationFilter.getBounds() : map.getBounds());
@@ -77,9 +79,23 @@ function main() {
 	locationFilter.on("change", update);
 	map.addLayer(locationFilter);
 	
-	var clipboard = new Clipboard("#copy_button", {
+	(new Clipboard("#copy_button", {
 		text: function() {
 			return $("#lon_min").text() + "," + $("#lat_min").text() + "," + $("#lon_max").text() + "," + $("#lat_max").text();
 		}
+	})).on("success", function(e) {
+		if (alertTimeout) {
+			clearTimeout(alertTimeout);
+		}
+		else {
+			$("#alert_copied").show();
+		}
+		alertTimeout = setTimeout(
+			function() {
+				$("#alert_copied").hide();
+				alertTimeout = null;
+			}, 1500
+		);
 	});
+	
 }

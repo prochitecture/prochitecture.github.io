@@ -57,10 +57,13 @@ function main() {
 	}
 	
 	//$("body").css("padding-top", "50px");
-	var map = L.map("map", {}).setView([40., 0.], 2);
+	var map = L.map("map", {
+		maxBounds: new L.LatLngBounds(new L.LatLng(-90., -180.), new L.LatLng(90., 180.))
+	}).setView([40., 0.], 2);
 	
 	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 		maxZoom: 19,
+		noWrap: true,
 		attribution: "Map data &copy; <a href=\"http://openstreetmap.org\" target=\"_newtab\">OpenStreetMap</a> contributors"
 	}).addTo(map);
 	

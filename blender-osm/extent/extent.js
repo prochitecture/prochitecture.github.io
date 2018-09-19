@@ -70,9 +70,15 @@ function main() {
 		attribution: "Map data &copy; <a href=\"http://openstreetmap.org\" target=\"_newtab\">OpenStreetMap</a> contributors"
 	});
 	
+	var bingLayer = L.tileLayer.bing({
+		"bingMapsKey": "ApJrJScfP69KEQ0SzUdlfAwnVpbJ4V1wij_20UEvMQ5L_euitXGy6HSNg-wzkvWu",
+		"imagerySet": "AerialWithLabels"
+	});
+	
 	var baseMaps = {
 		"OSM Mapnik": osmMapnik,
-		"OSM by Wikimedia": osmWikimedia
+		"OSM by Wikimedia": osmWikimedia,
+		"Bing Satellite": bingLayer
 	};
 	
 	var map = L.map("map", {

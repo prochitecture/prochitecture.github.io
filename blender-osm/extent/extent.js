@@ -57,15 +57,31 @@ function main() {
 	}
 	
 	//$("body").css("padding-top", "50px");
-	var map = L.map("map", {
-		maxBounds: new L.LatLngBounds(new L.LatLng(-90., -180.), new L.LatLng(90., 180.))
-	}).setView([40., 0.], 2);
 	
-	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+	var osmMapnik = L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 		maxZoom: 19,
 		noWrap: true,
 		attribution: "Map data &copy; <a href=\"http://openstreetmap.org\" target=\"_newtab\">OpenStreetMap</a> contributors"
-	}).addTo(map);
+	});
+	
+	var osmWikimedia = L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png?lang=en", {
+		maxZoom: 19,
+		noWrap: true,
+		attribution: "Map data &copy; <a href=\"http://openstreetmap.org\" target=\"_newtab\">OpenStreetMap</a> contributors"
+	});
+	
+	var baseMaps = {
+		"OSM Mapnik": osmMapnik,
+		"OSM by Wikimedia": osmWikimedia
+	};
+	
+	var map = L.map("map", {
+		maxBounds: new L.LatLngBounds(new L.LatLng(-90., -180.), new L.LatLng(90., 180.)),
+		layers: [osmMapnik]
+	}).setView([40., 0.], 2);
+	
+	// the following line will also add the layer <osmWikimedia> to the <map>
+	L.control.layers(baseMaps).addTo(map);
 	
 	$("#rectangle_button").on("click", function(event) {
 		locationFilter.setBounds(map.getBounds().pad(-0.2));

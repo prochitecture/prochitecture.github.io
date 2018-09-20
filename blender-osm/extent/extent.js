@@ -76,7 +76,7 @@ function main() {
 	});
 	
 	var baseMaps = {
-		"OSM Mapnik": osmMapnik,
+		"OSM Default": osmMapnik,
 		"OSM by Wikimedia": osmWikimedia,
 		"Bing Satellite": bingLayer
 	};

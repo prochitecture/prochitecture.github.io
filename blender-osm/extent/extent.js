@@ -86,6 +86,15 @@ function main() {
 		layers: [osmMapnik]
 	}).setView([40., 0.], 2);
 	
+	L.Control.geocoder({
+		defaultMarkGeocode: false,
+		position: "topleft"
+	})
+	.on("markgeocode", function(e) {
+		map.fitBounds((e.geocode || e).bbox);
+	})
+	.addTo(map);
+	
 	// the following line will also add the layer <osmWikimedia> to the <map>
 	L.control.layers(baseMaps).addTo(map);
 	

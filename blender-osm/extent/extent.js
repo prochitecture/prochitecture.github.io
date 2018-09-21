@@ -29,8 +29,14 @@ var urlParameters =
 function main() {
 	
 	var precision = 5,
-		alertTimeout = null
+		alertTimeout = null,
+		addonVersion = "addon_version" in urlParameters ? urlParameters["addon_version"] : "",
+		isPremium = (addonVersion.indexOf("premium") != -1) || addonVersion.charAt(0) == "1"
 	;
+	
+	if (!isPremium) {
+		$("#news").toggle(true);
+	}
 	
 	function update() {
 		setBounds(locationFilter.isEnabled() ? locationFilter.getBounds() : map.getBounds());
@@ -76,7 +82,7 @@ function main() {
 	});
 	
 	var baseMaps = {
-		"OSM Default": osmMapnik,
+		"OSM by osm.org": osmMapnik,
 		"OSM by Wikimedia": osmWikimedia,
 		"Bing Satellite": bingLayer
 	};

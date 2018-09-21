@@ -7,6 +7,12 @@ html, body, #container {
 	display: none;
 	min-height: 50px;
 }
+#news {
+	display: none;
+}
+#news .alert {
+	margin-bottom: 0;
+}
 #sidebar {
 	float: left;
 	height: 100%;
@@ -36,6 +42,9 @@ html, body, #container {
 }
 .coord-body {
 	padding: 0;
+}
+#social_networks {
+	display: none;
 }
 #twitter_button span {
     position: relative;

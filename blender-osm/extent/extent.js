@@ -70,22 +70,28 @@ function main() {
 		attribution: "Map data &copy; <a href=\"http://openstreetmap.org\" target=\"_newtab\">OpenStreetMap</a> contributors"
 	});
 	
+	/*
 	var osmWikimedia = L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png?lang=en", {
 		maxZoom: 19,
 		noWrap: true,
 		attribution: "Map data &copy; <a href=\"http://openstreetmap.org\" target=\"_newtab\">OpenStreetMap</a> contributors"
 	});
+	*/
 	
+	/*
 	var bingLayer = L.tileLayer.bing({
 		"bingMapsKey": "ApJrJScfP69KEQ0SzUdlfAwnVpbJ4V1wij_20UEvMQ5L_euitXGy6HSNg-wzkvWu",
 		"imagerySet": "AerialWithLabels"
 	});
+	*/
 	
+	/*
 	var baseMaps = {
 		"OSM by osm.org": osmMapnik,
 		"OSM by Wikimedia": osmWikimedia,
 		"Bing Satellite": bingLayer
 	};
+	*/
 	
 	var map = L.map("map", {
 		maxBounds: new L.LatLngBounds(new L.LatLng(-90., -180.), new L.LatLng(90., 180.)),
@@ -102,7 +108,7 @@ function main() {
 	.addTo(map);
 	
 	// the following line will also add the layer <osmWikimedia> to the <map>
-	L.control.layers(baseMaps).addTo(map);
+	//L.control.layers(baseMaps).addTo(map);
 	
 	$("#rectangle_button").on("click", function(event) {
 		locationFilter.setBounds(map.getBounds().pad(-0.2));

@@ -69,6 +69,12 @@ function main() {
 		noWrap: true,
 		attribution: "Map data &copy; <a href=\"http://openstreetmap.org\" target=\"_newtab\">OpenStreetMap</a> contributors"
 	});
+
+	var arcgisSatellite = L.tileLayer("http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+		maxZoom: 19,
+		noWrap: true,
+		attribution: "Source: Esri, Maxar, GeoEye, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AeroGRID, IGN, and the GIS User Community"
+	});
 	
 	/*
 	var osmWikimedia = L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png?lang=en", {
@@ -85,13 +91,12 @@ function main() {
 	});
 	*/
 	
-	/*
 	var baseMaps = {
 		"OSM by osm.org": osmMapnik,
-		"OSM by Wikimedia": osmWikimedia,
-		"Bing Satellite": bingLayer
+		"ArcGIS Satellite": arcgisSatellite
+		//"OSM by Wikimedia": osmWikimedia,
+		//"Bing Satellite": bingLayer
 	};
-	*/
 	
 	var map = L.map("map", {
 		maxBounds: new L.LatLngBounds(new L.LatLng(-90., -180.), new L.LatLng(90., 180.)),
@@ -108,7 +113,7 @@ function main() {
 	.addTo(map);
 	
 	// the following line will also add the layer <osmWikimedia> to the <map>
-	//L.control.layers(baseMaps).addTo(map);
+	L.control.layers(baseMaps).addTo(map);
 	
 	$("#rectangle_button").on("click", function(event) {
 		locationFilter.setBounds(map.getBounds().pad(-0.2));

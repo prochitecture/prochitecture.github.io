@@ -21,6 +21,9 @@ html, body, #container {
 	padding: 10px;
 	overflow-y: auto;
 }
+#area_size_panel {
+	display: none;
+}
 #coords {
 	display: none;
 }

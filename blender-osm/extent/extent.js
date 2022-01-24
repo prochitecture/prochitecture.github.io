@@ -56,10 +56,17 @@ function main() {
 	}
 	
 	function setBounds(bounds) {
-		$("#lon_min").text(bounds.getWest().toFixed(precision));
-		$("#lat_min").text(bounds.getSouth().toFixed(precision));
-		$("#lon_max").text(bounds.getEast().toFixed(precision));
-		$("#lat_max").text(bounds.getNorth().toFixed(precision));
+		west = bounds.getWest();
+		south = bounds.getSouth();
+		east = bounds.getEast();
+		north = bounds.getNorth();
+		$("#area_size").text(
+			(L.latLng(south, east).distanceTo(L.latLng(south, west))/1000.0).toFixed(1) + " x " + (L.latLng(north, west).distanceTo(L.latLng(south, west))/1000.0).toFixed(1) + " km"
+		);
+		$("#lon_min").text(west.toFixed(precision));
+		$("#lat_min").text(south.toFixed(precision));
+		$("#lon_max").text(east.toFixed(precision));
+		$("#lat_max").text(north.toFixed(precision));
 	}
 	
 	//$("body").css("padding-top", "50px");
@@ -120,6 +127,7 @@ function main() {
 		locationFilter.enable();
 		update();
 		$("#drag_instructions").show();
+		$("#area_size_panel").show();
 		$("#coords").show();
 	});
 	

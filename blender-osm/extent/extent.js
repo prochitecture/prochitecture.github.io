@@ -77,10 +77,10 @@ function main() {
 		attribution: "Map data &copy; <a href=\"http://openstreetmap.org\" target=\"_newtab\">OpenStreetMap</a> contributors"
 	});
 
-	var arcgisSatellite = L.tileLayer("http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+	var arcgisSatellite = L.tileLayer("https://ibasemaps-api.arcgis.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}?token=AAPK7c90647c0bbe49d38c97ec3d0097f376UeShvzzHe8vgo-K6rlmqhYSBiktMZ-5y6-tMMdxmyhafPlp5K0QjjgxGEyWgYFVz", {
 		maxZoom: 19,
 		noWrap: true,
-		attribution: "Source: Esri, Maxar, GeoEye, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AeroGRID, IGN, and the GIS User Community"
+		attribution: "Source: DigitalGlobe, GeoEye, i-cubed, USDA, USGS, AEX, Getmapping, Aerogrid, IGN, IGP, swisstopo, and the GIS User Community"
 	});
 	
 	/*
